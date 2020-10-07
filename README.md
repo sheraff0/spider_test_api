@@ -10,7 +10,9 @@ Example setup of Django web app with REST API. Includes:
 Running in local environment:
 -
 `docker-compose build`
+
 `docker-compose run web python manage.py migrate`
+
 `docker-compose up`
 
 Hence, ready to accept connections at:
