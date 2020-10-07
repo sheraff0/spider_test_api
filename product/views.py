@@ -1,6 +1,5 @@
 # from django.shortcuts import render
 from rest_framework import viewsets, permissions, response
-from rest_framework.generics import RetrieveAPIView
 from .serializers import (
     CategorySerializer, CompanySerializer,
     ProductSerializer, DetailedProductSerializer)

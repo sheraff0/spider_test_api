@@ -9,13 +9,18 @@ Example setup of Django web app with REST API. Includes:
 
 Running in local environment:
 -
+1) Create `.env` file with:
+`SECRET_KEY=<key>`
+and optionally `DB_NAME`, `DB_USER`, `DB_PASSWORD` variables.
+
+2) Build and run docker image:
 `docker-compose build`
 
 `docker-compose run web python manage.py migrate`
 
 `docker-compose up`
 
-Hence, ready to accept connections at:
+3) Hence, ready to accept connections at:
 `http://0.0.0.0:8000/<api_url>`
 
 Optionally:
