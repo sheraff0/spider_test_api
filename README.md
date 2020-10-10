@@ -5,6 +5,7 @@ Example setup of Django web app with REST API. Includes:
 - customized user model with additional field;
 - API interface with `django-filter` and `dj-rest-auth` enabled;
 - permissions setup for data access;
+- external API import script, bash-callable with management command (see below);
 - simple Docker config for development.
 
 Running in local environment:
@@ -33,3 +34,22 @@ API entry points:
 	-  __/categories__, __/companies__, __/products__ - respective lists, with other options available through certain permissions;
 -  __/auth__ - auth root;
 	-  __/login__, __/logout__, __/user__, __/password/reset__, __/password/reset/confirm__, __/password/change__, __/registration__ - respective actions.
+
+External API import script:
+-
+To call once:
+
+`docker-compose run web python manage.py import_products`
+
+To add to __crontab__:
+1) In project folder, subfolder `cron`, edit two files, `cron.txt` and `entry.sh`, by replacing the string `<ROOT_PATH>` with actual path to project folder.
+
+(optional) In `cron.txt` replace `@hourly` with appropriate period marking.
+
+2) Change permissions of `entry.sh`:
+
+`sudo chmod 0644 cron/entry.sh`
+
+3) Add cron task:
+
+`(crontab -l; cat cron/cron.txt) | crontab -`
