@@ -33,7 +33,7 @@ API entry points:
 -
 -  __/api__ - common root;
 	-  __/categories__, __/companies__, __/products__ - respective lists, with other options available through certain permissions;
-	- __/companies/distances/?lon=<longitude>&lat=<latitude>__ - list of companies ranged by distance to location specified in GET params;
+	- __/companies/distances/?lon=\<longitude>&lat=\<latitude>__ - list of companies ranged by distance to location specified in GET params;
 -  __/auth__ - auth root;
 	-  __/login__, __/logout__, __/user__, __/password/reset__, __/password/reset/confirm__, __/password/change__, __/registration__ - respective actions.
 
