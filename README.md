@@ -17,7 +17,9 @@ and optionally `DB_NAME`, `DB_USER`, `DB_PASSWORD` variables.
 
 2) Build and run docker image:
 
-`docker-compose build`
+`docker-compose up --build`
+
+Django throws error, because at first run `postgis` extension is not created yet. Ignore these errors and stop the container.
 
 `docker-compose run web python manage.py migrate`
 

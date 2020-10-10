@@ -29,7 +29,7 @@ class Company(models.Model):
         null=True, blank=True, verbose_name='Внешний ID')
     location = models.PointField(
         null=True, blank=True,
-        srid=4326,
+        geography=True, srid=4326,
         verbose_name="Местонахождение, координаты"
     )
 
