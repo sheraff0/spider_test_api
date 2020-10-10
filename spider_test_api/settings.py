@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
@@ -79,7 +80,8 @@ WSGI_APPLICATION = 'spider_test_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+#        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': env.get('DB_NAME', 'postgres'),
         'USER': env.get('DB_USER', 'postgres'),
         'PASSWORD': env.get('DB_PASSWORD', 'postgres'),

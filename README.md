@@ -6,6 +6,7 @@ Example setup of Django web app with REST API. Includes:
 - API interface with `django-filter` and `dj-rest-auth` enabled;
 - permissions setup for data access;
 - external API import script, bash-callable with management command (see below);
+- some geospatial data included and serialized by API request;
 - simple Docker config for development.
 
 Running in local environment:
@@ -32,6 +33,7 @@ API entry points:
 -
 -  __/api__ - common root;
 	-  __/categories__, __/companies__, __/products__ - respective lists, with other options available through certain permissions;
+	- __/companies/distances/?lon=<longitude>&lat=<latitude>__ - list of companies ranged by distance to location specified in GET params;
 -  __/auth__ - auth root;
 	-  __/login__, __/logout__, __/user__, __/password/reset__, __/password/reset/confirm__, __/password/change__, __/registration__ - respective actions.
 

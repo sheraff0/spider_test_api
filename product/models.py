@@ -1,5 +1,7 @@
 import uuid
-from django.db import models
+# from django.db import models
+from django.contrib.gis.db import models
+from django.contrib.gis.geos import Point
 
 
 class Category(models.Model):
@@ -25,6 +27,11 @@ class Company(models.Model):
         default=True, verbose_name='Отображать')
     external_id = models.PositiveIntegerField(
         null=True, blank=True, verbose_name='Внешний ID')
+    location = models.PointField(
+        null=True, blank=True,
+        srid=4326,
+        verbose_name="Местонахождение, координаты"
+    )
 
     def __str__(self):
         return self.name

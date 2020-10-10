@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
+from django.contrib.postgres.operations import CreateExtension
 import uuid
 
 
@@ -13,6 +14,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        CreateExtension('postgis'),
         migrations.CreateModel(
             name='Category',
             fields=[
