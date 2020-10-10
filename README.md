@@ -39,11 +39,11 @@ API entry points:
 
 External API import script:
 -
-To call once:
+Call once:
 
 `docker-compose run web python manage.py import_products`
 
-To add to __crontab__:
+Add to __crontab__:
 1) In project folder, subfolder `cron`, edit two files, `cron.txt` and `entry.sh`, by replacing the string `<ROOT_PATH>` with actual path to project folder.
 
 (optional) In `cron.txt` replace `@hourly` with appropriate period marking.
