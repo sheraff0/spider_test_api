@@ -6,6 +6,8 @@ class Category(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(
         max_length=256, null=True, blank=True, verbose_name='Название категории')
+    external_id = models.PositiveIntegerField(
+        null=True, blank=True, verbose_name='Внешний ID')
 
     def __str__(self):
         return self.title
@@ -17,13 +19,15 @@ class Category(models.Model):
 
 class Company(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    description = models.CharField(
-        max_length=256, null=True, blank=True, verbose_name='Описание компании')
+    name = models.CharField(
+        max_length=256, null=True, blank=True, verbose_name='Название компании')
     is_active = models.BooleanField(
         default=True, verbose_name='Отображать')
+    external_id = models.PositiveIntegerField(
+        null=True, blank=True, verbose_name='Внешний ID')
 
     def __str__(self):
-        return self.description
+        return self.name
 
     class Meta:
         verbose_name = 'Компания'
@@ -52,6 +56,8 @@ class Product(models.Model):
         )
     is_active = models.BooleanField(
         default=True, verbose_name='Отображать')
+    external_id = models.PositiveIntegerField(
+        null=True, blank=True, verbose_name='Внешний ID')
 
     def __str__(self):
         return self.title
